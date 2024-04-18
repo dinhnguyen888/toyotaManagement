@@ -4,11 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "antd";
 
 const Sidebar: React.FC = () => {
-    const [activeButton, setActiveButton] = useState<string | null>(null);
-
-    const handleButtonClick = (buttonName: string) => {
-        setActiveButton(buttonName);
-    };
+   
 
     return (
         <>
@@ -23,28 +19,27 @@ const Sidebar: React.FC = () => {
 
                     <Link to='/dashboard'>
                         <Button
-                            className={`w-full h-11 mt-11 bg-neutral-700 text-white border-neutral-700 rounded-md uppercase font-bold flex justify-start ${activeButton === 'dashboard' ? 'text-amber-500' : ''}`}
-                            onClick={() => handleButtonClick('dashboard')}
+                            className={`w-full h-11 mt-11 bg-neutral-700 text-white border-neutral-700 rounded-md uppercase font-bold flex justify-start`}
+                           
+                        >
+                            Dashboard
+                        </Button>
+                    </Link>
+                    <Link to='/dashboard'>
+                        <Button
+                            className={`w-full h-11 mt-11 bg-neutral-700 text-white border-neutral-700 rounded-md uppercase font-bold flex justify-start`}
+                           
                         >
                             Dashboard
                         </Button>
                     </Link>
 
-                    <Link to='/nhansu'>
+                    <Link to='/dashboard'>
                         <Button
-                            className={`w-full h-11 mt-11 bg-neutral-700 text-white border-neutral-700 rounded-md uppercase font-bold flex justify-start ${activeButton === 'nhansu' ? 'text-amber-500' : ''}`}
-                            onClick={() => handleButtonClick('nhansu')}
+                            className={`w-full h-11 mt-11 bg-neutral-700 text-white border-neutral-700 rounded-md uppercase font-bold flex justify-start`}
+                           
                         >
-                            Nhân sự
-                        </Button>
-                    </Link>
-
-                    <Link to='/hangton'>
-                        <Button
-                            className={`w-full h-11 mt-11 bg-neutral-700 text-white border-neutral-700 rounded-md uppercase font-bold flex justify-start ${activeButton === 'hangton' ? 'text-amber-500' : ''}`}
-                            onClick={() => handleButtonClick('hangton')}
-                        >   
-                            Hàng tồn
+                            Dashboard
                         </Button>
                     </Link>
                 </div>

@@ -10,7 +10,7 @@ export default function App() {
     <>
        <Template>
     <><Routes>
-      <Route path='/' element={<Navbar />} />
+      <Route path='/dashboard' element={<Navbar />} />
 
 
     </Routes>

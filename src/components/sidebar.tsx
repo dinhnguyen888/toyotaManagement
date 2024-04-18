@@ -21,30 +21,30 @@ const Sidebar: React.FC = () => {
                         </h1>
                     </div>
 
-                    <Link to=''>
+                    <Link to='/dashboard'>
                         <Button
-                            className={`w-full h-11 mt-11 bg-neutral-700 text-white border-neutral-700 rounded-md uppercase font-bold flex justify-start ${activeButton === 'dashboard' ? 'text-amber-300' : ''}`}
+                            className={`w-full h-11 mt-11 bg-neutral-700 text-white border-neutral-700 rounded-md uppercase font-bold flex justify-start ${activeButton === 'dashboard' ? 'text-amber-500' : ''}`}
                             onClick={() => handleButtonClick('dashboard')}
                         >
-                            dashboard
+                            Dashboard
                         </Button>
                     </Link>
 
-                    <Link to=''>
+                    <Link to='/nhansu'>
                         <Button
-                            className={`w-full h-11 mt-11 bg-neutral-700 text-white border-neutral-700 rounded-md uppercase font-bold flex justify-start ${activeButton === 'nhansu' ? 'text-amber-300' : ''}`}
+                            className={`w-full h-11 mt-11 bg-neutral-700 text-white border-neutral-700 rounded-md uppercase font-bold flex justify-start ${activeButton === 'nhansu' ? 'text-amber-500' : ''}`}
                             onClick={() => handleButtonClick('nhansu')}
                         >
-                            nhân sự
+                            Nhân sự
                         </Button>
                     </Link>
 
-                    <Link to=''>
+                    <Link to='/hangton'>
                         <Button
-                            className={`w-full h-11 mt-11 bg-neutral-700 text-white border-neutral-700 rounded-md uppercase font-bold flex justify-start ${activeButton === 'hangton' ? 'text-amber-300' : ''}`}
+                            className={`w-full h-11 mt-11 bg-neutral-700 text-white border-neutral-700 rounded-md uppercase font-bold flex justify-start ${activeButton === 'hangton' ? 'text-amber-500' : ''}`}
                             onClick={() => handleButtonClick('hangton')}
                         >   
-                            hangton
+                            Hàng tồn
                         </Button>
                     </Link>
                 </div>

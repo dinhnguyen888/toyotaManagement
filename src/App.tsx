@@ -3,20 +3,23 @@ import { Route, Routes } from 'react-router';
 import Template from './template/template';
 
 import Navbar from './components/navbar';
+import ListTable from './components/table';
+
 export default function App() {
   
 
   return (
     <>
        <Template>
-    <><Routes>
-      <Route path='/dashboard' element={<Navbar />} />
+    <div>
+    <Routes>
+      <Route path='/' element={<ListTable />} />
 
 
     </Routes>
-sadasdd
+
     
-    </>
+    </div>
    </Template>
 
 

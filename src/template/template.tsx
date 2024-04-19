@@ -13,7 +13,7 @@
             <Navbar />
         <div>
         
-        <div className="h-full w-4/5 bg-slate-100 relative  -z-10 float-right rounded-lg">
+        <div className="h-full w-4/5 bg-slate-200 relative  -z-10 float-right rounded-lg mr-3">
     {children}
         </div>
         </div>

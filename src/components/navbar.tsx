@@ -64,7 +64,7 @@ const Navbar = () => {
                         <Avatar className="mr-4"></Avatar>
                     </div>
                 </div>
-            </div>
+            </div>  
         </>
     );
 };

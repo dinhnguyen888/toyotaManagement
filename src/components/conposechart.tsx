@@ -1,40 +1,41 @@
-    
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   ComposedChart,
-  Line,
   Bar,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
-  Area
+  Legend
 } from "recharts";
+import { getAllUsers, NhanVien } from "../service/apinhanvien";
 
-const data = [
-  {
-    name: "KHánh",
-   diemso:100
-  },
-  {
-    name: "Bảo",
-   diemso:50
-  },
-  {
-    name: "Đỉnh",
-  diemso:200,
-  },
+const ComposeChart: React.FC = () => {
+  const [nhanVienData, setNhanVienData] = useState<{ name: string; hieuSuat: string }[]>([]);
 
-];
+  useEffect(() => {
+    const fetchNhanVienData = async () => {
+      try {
+        const data = await getAllUsers();
+        const formattedData = data.map((nv) => ({
+          name: nv.hoVaTen,
+          hieuSuat: nv.hieuSuatLamViec
+        }));
+        setNhanVienData(formattedData);
+      } catch (error) {
+        console.error("Failed to fetch nhan vien data:", error);
+      }
+    };
 
-export default function ComposeChart() {
+    fetchNhanVienData();
+  }, []);
+
   return (
     <ComposedChart
       layout="vertical"
       width={600}
       height={400}
-      data={data}
+      data={nhanVienData}
       margin={{
         top: 20,
         right: 20,
@@ -43,13 +44,13 @@ export default function ComposeChart() {
       }}
     >
       <CartesianGrid stroke="#f5f5f5" />
-      <XAxis type="number" />
+      <XAxis type="category" />
       <YAxis dataKey="name" type="category" scale="band" />
       <Tooltip />
       <Legend />
-   
-      <Bar dataKey="diemso" barSize={20} fill="#413ea0" />
-      
+      <Bar dataKey="hieuSuat" barSize={20} fill="#413ea0" />
     </ComposedChart>
   );
 }
+
+export default ComposeChart;
